@@ -1,50 +1,154 @@
-# AI Agent Builder 🤖⚡
+# 🤖 AI Agent Builder
 
-Build AI agents with drag-and-drop. No coding required. Create powerful autonomous agents in minutes.
+> **Build AI agents with drag-and-drop** — No coding required. Create autonomous agents with tools, memory, and LLM integration in minutes.
 
-[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](Dockerfile)
+[![Stars](https://img.shields.io/github/stars/walidsobhie-code/ai-agent-builder)](https://github.com/walidsobhie-code/ai-agent-builder/stargazers)
 
-## Why AI Agents?
+## 🎯 What It Does
 
-AI agents are the next big thing! Projects like `oh-my-claudecode` (17k stars) and `hermes-agent` (17k stars) are trending. This tool makes building them accessible to everyone.
+```
+Build: [LLM] → [Tools] → [Memory] → [Output]
+Ask:   "Find the best flight from Dubai to Riyadh"
+
+Agent: Searches web → Checks calendar → Books flight → Confirms email ✅
+```
+
+Build agents that **actually do things** — search the web, run code, send emails, use APIs.
 
 ## ✨ Features
 
-- 🎯 **Visual Builder** - Drag and drop nodes to create workflows
-- 🧠 **LLM Integration** - Connect to GPT-4, Claude, Gemini, Local models
-- 💾 **Memory** - Persistent conversation history
-- 📚 **Knowledge Base** - Upload PDFs, docs for RAG
-- 🔌 **Tools** - Built-in tools + custom plugins
-- 🔄 **Multi-agent** - Orchestrate multiple agents together
-- 🌐 **Web UI** - Gradio interface for easy agent building
-- 🐳 **Docker Ready** - Deploy anywhere
+| Feature | Description |
+|---------|-------------|
+| 🧠 **GPT-4 Powered** | State-of-the-art language model |
+| 🔧 **Tool Plugins** | Web search, calculator, API calls |
+| 💾 **Memory** | Remember conversation context |
+| 🤖 **Multi-Agent** | Orchestrate multiple agents |
+| 🎛️ **Gradio UI** | Visual agent builder |
+| 🐳 **Docker Ready** | One-command deployment |
 
 ## 🚀 Quick Start
 
+### Install
 ```bash
+git clone https://github.com/walidsobhie-code/ai-agent-builder.git
+cd ai-agent-builder
 pip install -r requirements.txt
+cp .env.example .env
+# Add your OPENAI_API_KEY
+```
 
-# Run CLI
-python agent_builder.py
+### Build Your First Agent
+```python
+from agent_builder import AgentBuilder
 
-# Or use Web UI
+# Create agent
+builder = AgentBuilder()
+
+# Add LLM
+builder.add_node("llm", {
+    "model": "gpt-4",
+    "temperature": 0.7
+})
+
+# Add tools
+builder.add_tool(
+    name="web_search",
+    func=lambda q: f"Results for: {q}",
+    description="Search the web"
+)
+
+# Ask questions
+result = builder.execute("Find Operations Manager jobs in Dubai")
+print(result)
+```
+
+### Or Use the Web UI
+```bash
 python gradio_app.py
-# Open http://localhost:7863
+# Opens: http://localhost:7860
+```
+
+## 🎨 Visual Builder Demo
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  🤖 AI Agent Builder                                    │
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌─────────┐    ┌─────────┐    ┌─────────────┐       │
+│  │   LLM   │───▶│  TOOLS  │───▶│   MEMORY    │       │
+│  │  GPT-4  │    │ Search  │    │  Conversation│       │
+│  └─────────┘    │ Calculate│    └─────────────┘       │
+│                  │ API Call │                            │
+│                  └─────────┘                            │
+│                                                          │
+│  💬 "Book a flight to Dubai for tomorrow"               │
+│  🔍 Searching flights...                                 │
+│  ✈️ Found: Emirates EK123 at 2:30 PM                   │
+│  ✅ Booking confirmed!                                  │
+└──────────────────────────────────────────────────────────┘
+```
+
+## 🔧 Built-in Tools
+
+| Tool | What It Does |
+|------|---------------|
+| 🌐 `web_search` | Search Google/Bing |
+| 🧮 `calculator` | Run math calculations |
+| 📧 `send_email` | Send email notifications |
+| 📅 `check_calendar` | Check calendar availability |
+| 📊 `run_code` | Execute Python code |
+| 🔍 `vector_search` | Search knowledge base |
+
+## 📖 Example Agents
+
+### Research Agent
+```python
+builder = AgentBuilder()
+builder.add_node("llm", {"model": "gpt-4", "temperature": 0.3})
+builder.add_tool("web_search", search_web)
+result = builder.execute("Research AI trends in Gulf region")
+```
+
+### Job Hunter Agent
+```python
+builder = AgentBuilder()
+builder.add_node("llm", {"model": "gpt-4"})
+builder.add_tool("web_search", search_linkedin)
+builder.add_tool("send_email", send_application)
+result = builder.execute("Apply to Operations Manager jobs in Saudi")
 ```
 
 ## 🐳 Docker
 
 ```bash
-docker build -t ai-agent-builder .
-docker run -p 7863:7863 -e OPENAI_API_KEY=your-key ai-agent-builder
+docker build -t agent-builder .
+docker run -p 7860:7860 -e OPENAI_API_KEY=your_key agent-builder
 ```
 
-## 📝 License
+## 📁 Project Structure
 
-MIT License
+```
+ai-agent-builder/
+├── agent_builder.py      # Core builder
+├── gradio_app.py       # Web UI
+├── requirements.txt
+├── Dockerfile
+└── examples/
+    ├── research_agent.py
+    └── job_hunter_agent.py
+```
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## ⭐ Support
 
-Star the repo if this helps!
+Star the repo if you find it useful!
+
+---
+
+**Built with ❤️ by [walidsobhie-code](https://github.com/walidsobhie-code)**
