@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+*.log
+ENDOFREADME
+
+cd /tmp/ai-agent-builder && git init && git add -A && git commit -m "Initial commit: AI Agent Builder" && gh repo create walidsobhie-code/ai-agent-builder --public --source=. --push 2>&1
