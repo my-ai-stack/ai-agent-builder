@@ -2,8 +2,9 @@
 
 Build AI agents with drag-and-drop. No coding required. Create powerful autonomous agents in minutes.
 
-![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](Dockerfile)
 
 ## Why AI Agents?
 
@@ -17,41 +18,28 @@ AI agents are the next big thing! Projects like `oh-my-claudecode` (17k stars) a
 - 📚 **Knowledge Base** - Upload PDFs, docs for RAG
 - 🔌 **Tools** - Built-in tools + custom plugins
 - 🔄 **Multi-agent** - Orchestrate multiple agents together
-- 📊 **Debug Mode** - See exactly what your agent is thinking
+- 🌐 **Web UI** - Gradio interface for easy agent building
+- 🐳 **Docker Ready** - Deploy anywhere
 
 ## 🚀 Quick Start
 
 ```bash
-# Install
 pip install -r requirements.txt
 
-# Run the builder
+# Run CLI
 python agent_builder.py
 
-# Or use the CLI
-python -m agent_builder.cli --help
+# Or use Web UI
+python gradio_app.py
+# Open http://localhost:7863
 ```
 
-## 📖 Documentation
+## 🐳 Docker
 
-- [Quick Start Guide](docs/quickstart.md)
-- [Node Reference](docs/nodes.md)
-- [API Reference](docs/api.md)
-- [Examples](examples/)
-
-## 🛠️ Requirements
-
+```bash
+docker build -t ai-agent-builder .
+docker run -p 7863:7863 -e OPENAI_API_KEY=your-key ai-agent-builder
 ```
-langchain>=0.1.0
-openai>=1.0.0
-anthropic>=0.10.0
-gradio>=4.0.0
-pydantic>=2.0.0
-```
-
-## 🤝 Contributing
-
-Contributions welcome!
 
 ## 📝 License
 
