@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/walidsobhie-code/ai-agent-builder)](https://github.com/walidsobhie-code/ai-agent-builder/stargazers)
 
-[🚀 Try Live Demo](https://huggingface.co/spaces/my-ai-stack/ai-agent-builder)
+[🤗 HuggingFace 🚀 Try Live Demo](https://huggingface.co/spaces/my-ai-stack/ai-agent-builder)
 
 ## 🎯 What It Does
 
