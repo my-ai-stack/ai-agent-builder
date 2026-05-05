@@ -1,8 +1,24 @@
 __pycache__/
 *.pyc
-.env
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
 .venv/
-*.log
-ENDOFREADME
+.eggs/
+.coverage
+htmlcov/
+site/
+.env
+.env.local
+uv.lock
 
-cd /tmp/ai-agent-builder && git init && git add -A && git commit -m "Initial commit: AI Agent Builder" && gh repo create walidsobhie-code/ai-agent-builder --public --source=. --push 2>&1
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
